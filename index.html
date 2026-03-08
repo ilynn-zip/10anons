@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO мета-теги (английский) -->
+    <title>10 Anons</title>
+    <meta name="description" content="Anonymous chat without registration. Only the last 10 messages from different users are displayed. Simple and minimalist.">
+    <meta name="keywords" content="anonymous chat, chat without registration, anonymous messaging, last messages, minimalist chat">
+    <meta name="author" content="Anonymous Chat Project">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="10 Anons">
+    <meta property="og:description" content="Anonymous chat without registration. Only the last 10 messages from different users are displayed.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://10anons/"> <!-- замените на свой URL -->
+    <meta property="og:image" content="https://10anons/preview.jpg"> <!-- замените на реальное изображение -->
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="10 Anons">
+    <meta name="twitter:description" content="Anonymous chat without registration. Only the last 10 messages from different users are displayed.">
+    <meta name="twitter:image" content="https://10anons/preview.jpg">
+
+    <!-- Favicon в виде эмодзи -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💬</text></svg>">
+
+    <!-- Подключаем CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+</head>
+<body>
+    <div class="chat-container">
+        <div class="chat-header">
+            <h2>10 Anons</h2>
+            <div style="display: flex; align-items: center; gap: 12px;">
+                
+                <div class="badge-container">
+                    <span class="badge">10 messages</span>
+                    <span class="tooltip-text">Only the last 10 messages are displayed in the chat. All messages are anonymous.</span>
+                </div>
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+                    <span class="light-icon">☀️</span>
+                    <span class="dark-icon">🌙</span>
+                </button>
+            </div>
+        </div>
+        <div id="messages" class="messages"></div>
+        <div class="input-area">
+            <input type="text" id="message" placeholder="Your message..." class="message-input" autocomplete="off"
+            autocorrect="off"
+            autocapitalize="none"
+            spellcheck="false">
+            <button id="send" class="send-button">➤</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script src="config.js"></script>
+</body>
+</html>
