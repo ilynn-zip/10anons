@@ -93,14 +93,14 @@ sendButton.addEventListener('click', async () => {
     
     try {
         await messagesCollection.add({
-            author: 'Аноним',
+            author: 'anon',
             text: text,
             timestamp: firebase.firestore.FieldValue.serverTimestamp()
         });
         messageInput.value = '';
     } catch (error) {
-        console.error('Ошибка отправки:', error);
-        alert('Не удалось отправить сообщение');
+        console.error('Err:', error);
+        alert('Failed to send message');
     }
 });
 
